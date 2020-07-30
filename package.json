@@ -1,0 +1,8 @@
+{
+  "name": "com.gamelovers.nativeui",
+  "displayName": "Native UI",
+  "version": "0.1.0",
+  "unity": "2019.4",
+  "description": "This package provides the OS functionality to show the native UI alerts, Game Review PopUp and message Toasts",
+  "type": "library"
+}
