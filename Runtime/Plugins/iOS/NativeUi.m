@@ -13,7 +13,7 @@ void AlertMessage (bool isSheet, char* title, char* message, char* buttonsText[]
 
     for (int i = 0; i < buttonsLength; i++) 
     {
-        NSString *buttonText = ToNSString(buttons[i]);
+        NSString *buttonText = ToNSString(buttonsText[i]);
         int index = i;
         UIAlertAction * button = [UIAlertAction actionWithTitle:buttonText style:(UIAlertActionStyle)buttonsStyle[i] handler:^(UIAlertAction * action) 
         {
