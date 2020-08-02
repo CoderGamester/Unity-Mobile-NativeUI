@@ -74,8 +74,8 @@ namespace GameLovers.NativeUi
 #elif UNITY_ANDROID
 			using (var unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
 			using (var unityActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity"))
-			using (var alertDialogBuilder = new AndroidJavaObject("android.app.AlertDialog.Builder", unityActivity))
-			using (var alertDialog = alertDialogBuilder.CallStatic<AndroidJavaObject>("create"))
+			using (var alertDialogBuilder = new AndroidJavaObject("android.app.AlertDialog$Builder", unityActivity))
+			using (var alertDialog = alertDialogBuilder.Call<AndroidJavaObject>("create"))
 			{
 				alertDialog.Call("setTitle", title);
 				alertDialog.Call("setMessage", message);
