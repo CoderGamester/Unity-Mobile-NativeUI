@@ -156,7 +156,7 @@ namespace GameLovers.NativeUi
 		{
 			private readonly Action _callback;
 			
-			public AndroidButtonCallback(Action callback) : base("android.content.DialogInterface.OnClickListener")
+			public AndroidButtonCallback(Action callback) : base("android.content.DialogInterface$OnClickListener")
 			{
 				_callback = callback;
 			}
