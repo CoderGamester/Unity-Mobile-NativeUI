@@ -25,30 +25,6 @@ namespace GameLovers.NativeUi
 	public static class NativeUiService
 	{
 		/// <summary>
-		/// Shows the native OS pop up to rate the game
-		/// </summary>
-		/// <exception cref="SystemException">
-		/// Thrown if the current platform is not iOS nor Android
-		/// </exception>
-		public static void ShowRatePopUp()
-		{
-#if UNITY_IOS
-			UnityEngine.iOS.Device.RequestStoreReview();
-#elif UNITY_ANDROID
-			using (var unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
-			using (var unityActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity"))
-			using (var managerFactory = new AndroidJavaClass("com.google.android.play.core.review.ReviewManagerFactory"))
-			using (var javaReviewManager = managerFactory.CallStatic<AndroidJavaObject>("create", unityActivity))
-			using (var reviewInfo = javaReviewManager.Call<AndroidJavaObject>("requestReviewFlow"))
-			{
-				javaReviewManager.Call<AndroidJavaObject>("launchReviewFlow", unityActivity, reviewInfo);
-			}
-#else
-			throw new SystemException("Rate this game option is only available for iOS and Android platforms");
-#endif
-		}
-
-		/// <summary>
 		/// Shows an alert native OS message popup with the given <paramref name="title"/>, <paramref name="message"/>
 		/// and the <paramref name="buttons"/> ordered from left to right.
 		/// If on iOS device, it can be set the pop up to be visible as an alert sheet depending on the given <paramref name="isAlertSheet"/>
