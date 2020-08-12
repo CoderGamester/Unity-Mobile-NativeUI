@@ -35,7 +35,7 @@ namespace GameLovers.NativeUi
 		public static void ShowAlertPopUp(bool isAlertSheet, string title, string message, params AlertButton[] buttons)
 		{
 #if UNITY_EDITOR
-			Debug.Log($"Show Alert Pop Up is not available in the editor and was triggered with: {title} - {message}")
+			Debug.Log($"Show Alert Pop Up is not available in the editor and was triggered with: {title} - {message}");
 #elif UNITY_IOS
 			_currentButtons = buttons ?? throw new ArgumentException("The buttons count must be higher than zero");
 
@@ -82,7 +82,7 @@ namespace GameLovers.NativeUi
 		public static void ShowToastMessage(string message, bool isLongDuration)
 		{
 #if UNITY_EDITOR
-			Debug.Log($"Show Toast message is not available in the editor and was triggered with: {message}")
+			Debug.Log($"Show Toast message is not available in the editor and was triggered with: {message}");
 #elif UNITY_IOS
 			ToastMessage(message, isLongDuration);
 #elif UNITY_ANDROID
