@@ -102,7 +102,8 @@ namespace GameLovers.NativeUi
 #endif
 		}
 		
-#if UNITY_IOS
+#if UNITY_EDITOR
+#elif UNITY_IOS
 		public delegate void AlertButtonDelegate(string buttonText);
 		
 		[System.Runtime.InteropServices.DllImport("__Internal")] 
