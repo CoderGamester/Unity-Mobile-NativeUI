@@ -102,9 +102,8 @@ namespace GameLovers.NativeUi
 #endif
 		}
 		
-#if UNITY_EDITOR
-#elif UNITY_IOS
-		public delegate void AlertButtonDelegate(string buttonText);
+#if UNITY_IOS
+		internal delegate void AlertButtonDelegate(string buttonText);
 		
 		[System.Runtime.InteropServices.DllImport("__Internal")] 
 		private static extern void AlertMessage(bool isSheet, string title, string message, string[] buttonsText, 
